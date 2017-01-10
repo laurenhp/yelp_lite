@@ -51,7 +51,7 @@
           Details
         </label>
 
-        <input type="text" id="details_id" name="details_id" placeholder="Details" class="form-control" value="<%= @restuarant.details_id %>">
+        <%= select_tag(:details_id, options_from_collection_for_select(Restaurantdetail.all, :id, :description, @restuarant.details_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
