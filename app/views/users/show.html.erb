@@ -17,6 +17,15 @@
       <dt>Average rating given</dt>
       <dd><%= @user.average_rating_given %></dd>
 
+      <dt>Posts</dt>
+      <dd>
+        <% if @user.posts.present? %>
+          <a href="/posts/<%= @user.posts_id %>">
+            <%= @user.posts.review_id %>
+          </a>
+        <% end %>
+      </dd>
+
     </dl>
 
     <div class="btn-group btn-group-justified">
