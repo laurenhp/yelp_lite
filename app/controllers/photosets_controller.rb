@@ -1,6 +1,6 @@
 class PhotosetsController < ApplicationController
   def index
-    @photosets = Photoset.all
+    @photosets = Photoset.page(params[:page]).per(10)
 
     render("photosets/index.html.erb")
   end
