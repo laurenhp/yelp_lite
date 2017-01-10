@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h1>
+    Restuarants
+    <a href="/restuarants/new" class="btn btn-lg btn-success">New Restuarant</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Number of review</th>
+        <th>Details</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @restuarants.each do |restuarant| %>
+      <tr>
+        <td><%= restuarant.name %></td>
+        <td><%= restuarant.rating %></td>
+        <td><%= restuarant.number_of_review %></td>
+        <td><%= restuarant.details_id %></td>
+        <td>
+          <a href="/restuarants/<%= restuarant.id %>" class="btn btn-primary">Show</a>
+          <a href="/restuarants/<%= restuarant.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_restuarant/<%= restuarant.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
