@@ -21,7 +21,13 @@
         <td><%= restuarant.name %></td>
         <td><%= restuarant.rating %></td>
         <td><%= restuarant.number_of_review %></td>
-        <td><%= restuarant.details.description %></td>
+        <td>
+          <% if restuarant.details.present? %>
+            <a href="/restaurantdetails/<%= restuarant.details.id %>">
+              <%= restuarant.details.description %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/restuarants/<%= restuarant.id %>" class="btn btn-primary">Show</a>
           <a href="/restuarants/<%= restuarant.id %>/edit" class="btn btn-warning">Edit</a>

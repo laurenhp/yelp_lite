@@ -9,7 +9,13 @@
       <dd><img src="<%= @photo.photo %>" class="img-responsive"></dd>
 
       <dt>Photoset</dt>
-      <dd><%= @photo.photoset_id %></dd>
+      <dd>
+        <% if @photo.photoset.present? %>
+          <a href="/photosets/<%= @photo.photoset_id %>">
+            <%= @photo.photoset.description %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

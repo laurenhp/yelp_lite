@@ -15,7 +15,13 @@
       <dd><%= @restuarant.number_of_review %></dd>
 
       <dt>Details</dt>
-      <dd><%= @restuarant.details_id %></dd>
+      <dd>
+        <% if @restuarant.details.present? %>
+          <a href="/restaurantdetails/<%= @restuarant.details_id %>">
+            <%= @restuarant.details.description %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 
