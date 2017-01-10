@@ -17,7 +17,7 @@
       <% @photos.each do |photo| %>
       <tr>
         <td><%= photo.photo %></td>
-        <td><%= photo.photoset_id %></td>
+        <td><%= photo.photoset.description %></td>
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>
           <a href="/photos/<%= photo.id %>/edit" class="btn btn-warning">Edit</a>
