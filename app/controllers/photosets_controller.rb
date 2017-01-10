@@ -6,6 +6,8 @@ class PhotosetsController < ApplicationController
   end
 
   def show
+    @photo = Photo.new
+    @review = Review.new
     @photoset = Photoset.find(params[:id])
 
     render("photosets/show.html.erb")
