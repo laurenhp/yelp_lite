@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Photoset resource:
+  # CREATE
+  get "/photosets/new", :controller => "photosets", :action => "new"
+  post "/create_photoset", :controller => "photosets", :action => "create"
+
+  # READ
+  get "/photosets", :controller => "photosets", :action => "index"
+  get "/photosets/:id", :controller => "photosets", :action => "show"
+
+  # UPDATE
+  get "/photosets/:id/edit", :controller => "photosets", :action => "edit"
+  post "/update_photoset/:id", :controller => "photosets", :action => "update"
+
+  # DELETE
+  get "/delete_photoset/:id", :controller => "photosets", :action => "destroy"
+  #------------------------------
+
   devise_for :users
   # Routes for the User resource:
   # READ
