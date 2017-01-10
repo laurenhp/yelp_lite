@@ -1,6 +1,7 @@
 class PhotosetsController < ApplicationController
   def index
-    @photosets = Photoset.page(params[:page]).per(10)
+    @q = Photoset.ransack(params[:q])
+    @photosets = @q.result(:distinct => true).includes(:reviews, :photos).page(params[:page]).per(10)
 
     render("photosets/index.html.erb")
   end
