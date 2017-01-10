@@ -1,6 +1,9 @@
 class Photoset < ApplicationRecord
   # Direct associations
 
+  has_many   :photos,
+             :dependent => :destroy
+
   has_many   :reviews,
              :dependent => :destroy
 
