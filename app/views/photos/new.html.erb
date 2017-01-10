@@ -33,7 +33,7 @@
           Photoset
         </label>
 
-        <input type="text" id="photoset_id" name="photoset_id" placeholder="Photoset" class="form-control" value="<%= @photo.photoset_id %>">
+        <%= select_tag(:photoset_id, options_from_collection_for_select(Photoset.all, :id, :description, @photo.photoset_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
