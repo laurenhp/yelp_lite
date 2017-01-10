@@ -11,12 +11,13 @@ class ReviewsController < ApplicationController
 
   def index
     @q = Review.ransack(params[:q])
-    @reviews = @q.result(:distinct => true).includes(:restaurantdetails, :user, :photoset).page(params[:page]).per(10)
+    @reviews = @q.result(:distinct => true).includes(:restaurantdetails, :posts, :user, :photoset).page(params[:page]).per(10)
 
     render("reviews/index.html.erb")
   end
 
   def show
+    @post = Post.new
     @restaurantdetail = Restaurantdetail.new
     @review = Review.find(params[:id])
 

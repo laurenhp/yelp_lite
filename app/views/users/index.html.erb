@@ -13,6 +13,7 @@
         <th>Password</th>
         <th>Number of reviews</th>
         <th>Average rating given</th>
+        <th>Posts</th>
         <th>Actions</th>
       </tr>
 
@@ -22,6 +23,13 @@
         <td><%= user.password %></td>
         <td><%= user.number_of_reviews %></td>
         <td><%= user.average_rating_given %></td>
+        <td>
+          <% if user.posts.present? %>
+            <a href="/posts/<%= user.posts.id %>">
+              <%= user.posts.review_id %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/users/<%= user.id %>" class="btn btn-primary">Show</a>
         </td>

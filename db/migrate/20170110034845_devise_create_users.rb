@@ -34,6 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.0]
       t.string :password
       t.string :number_of_reviews
       t.string :average_rating_given
+      t.integer :posts_id
 
       t.timestamps null: false
     end
